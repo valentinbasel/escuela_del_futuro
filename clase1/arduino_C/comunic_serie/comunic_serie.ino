@@ -58,7 +58,8 @@ void setup()
     */
     Serial.begin(9600);// ajusta la cantidad de bits que se envian por segundos (BAUDIOS)
     Serial.setTimeout(5);// ajusta la cantidad maxima de milisegundos para esperar datos desde el puerto serie
-    }
+    pinMode(13, OUTPUT);
+  }
 
 void loop() 
   {
