@@ -105,12 +105,19 @@ class Arduino:
         dato=0
         if self.RS232.isOpen():
             self.RS232.write("c")
+            print "c"
             dato=int(self.RS232.readline())
             return dato
 
 
 leonardo=Arduino() # creo una instancia de la clase Arduino
 dato=0 # aca guardo el dato del sensor analogico que obtengo del puerto serie
+for s in range(4):
+    leonardo.prender_led()
+    time.sleep(1)
+    leonardo.apagar_led()
+    time.sleep(1)
+    print s
 for m in range(100):
     dato=leonardo.leer_analogico()
     print "el valor del sensor analogico es: ",dato
@@ -121,4 +128,5 @@ for m in range(100):
         leonardo.apagar_led()
 
 
+leonardo.apagar_led()
 
