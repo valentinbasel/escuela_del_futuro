@@ -58,16 +58,16 @@ void setup()
     */
     Serial.begin(9600);// ajusta la cantidad de bits que se envian por segundos (BAUDIOS)
     Serial.setTimeout(5);// ajusta la cantidad maxima de milisegundos para esperar datos desde el puerto serie
-    pinMode(13, OUTPUT);
+    pinMode(13, OUTPUT); //ajusto como salida el pin13 de la placa arduino
   }
 
 void loop() 
   {
     /*
      El protocolo que establecemos es muy sencillo, cada ves que
-     recibamos un caracter del peurto serie, lo comparamos con la
-     instrucción switch, si es la letra "a" ponemos el pin13 en HIGH
-     (5 volt), con la letra "b" el pin13 lo ponemos en LOW (0 volt).
+     recibamos un caracter del puerto serie, lo comparamos con la
+     instrucción switch y si el caracter recibido es la letra "a" ponemos el pin13 en HIGH
+     (5 volt).Con la letra "b" el pin13 lo ponemos en LOW (0 volt).
      La letra "c" envia el valor del sensor analogico 0 (a0).
     */
   char dato; // variable donde se guarda el caracter ascii recibido por el puerto
